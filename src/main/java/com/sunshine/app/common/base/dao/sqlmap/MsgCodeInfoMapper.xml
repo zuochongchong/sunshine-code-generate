@@ -1,0 +1,3890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunshine.app.common.base.dao.MsgCodeInfoMapper">
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:44:12.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      This element was generated on 2020-03-21 01:44:12.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      This element was generated on 2020-03-21 01:44:12.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      This element was generated on 2020-03-21 01:44:12.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:44:12.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:44:12.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:44:12.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:44:12.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:36:21.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      This element was generated on 2020-03-21 01:36:21.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      This element was generated on 2020-03-21 01:36:21.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      This element was generated on 2020-03-21 01:36:21.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:36:21.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:36:21.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:36:21.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:36:21.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:32:55.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      This element was generated on 2020-03-21 01:32:55.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      This element was generated on 2020-03-21 01:32:55.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      This element was generated on 2020-03-21 01:32:55.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:32:55.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:32:55.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:32:55.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:32:55.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:31:02.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      This element was generated on 2020-03-21 01:31:02.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      This element was generated on 2020-03-21 01:31:02.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      This element was generated on 2020-03-21 01:31:02.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:31:02.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:31:02.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:31:02.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:31:02.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:28:44.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      This element was generated on 2020-03-21 01:28:44.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      This element was generated on 2020-03-21 01:28:44.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      This element was generated on 2020-03-21 01:28:44.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:28:44.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:28:44.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:28:44.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:28:44.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:27:05.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      This element was generated on 2020-03-21 01:27:05.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      This element was generated on 2020-03-21 01:27:05.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      This element was generated on 2020-03-21 01:27:05.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:27:05.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:27:05.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:27:05.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:27:05.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:25:46.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      This element was generated on 2020-03-21 01:25:46.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      This element was generated on 2020-03-21 01:25:46.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      This element was generated on 2020-03-21 01:25:46.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:25:46.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:25:46.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:25:46.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:25:46.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:18:43.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      This element was generated on 2020-03-21 01:18:43.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      This element was generated on 2020-03-21 01:18:43.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      This element was generated on 2020-03-21 01:18:43.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:18:43.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:18:43.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:18:43.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:18:43.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:09:32.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      This element was generated on 2020-03-21 01:09:32.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      This element was generated on 2020-03-21 01:09:32.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      This element was generated on 2020-03-21 01:09:32.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:09:32.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:09:32.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:09:32.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:09:32.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:03:41.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      This element was generated on 2020-03-21 01:03:41.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      This element was generated on 2020-03-21 01:03:41.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      This element was generated on 2020-03-21 01:03:41.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:03:41.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:03:41.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:03:41.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 01:03:41.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:54:44.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      This element was generated on 2020-03-21 00:54:44.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      This element was generated on 2020-03-21 00:54:44.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      This element was generated on 2020-03-21 00:54:44.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:54:44.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:54:44.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:54:44.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:54:44.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:53:53.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      This element was generated on 2020-03-21 00:53:53.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      This element was generated on 2020-03-21 00:53:53.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      This element was generated on 2020-03-21 00:53:53.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:53:53.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:53:53.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:53:53.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:53:53.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:47:53.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      This element was generated on 2020-03-21 00:47:53.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      This element was generated on 2020-03-21 00:47:53.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      This element was generated on 2020-03-21 00:47:53.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:47:53.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:47:53.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:47:53.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:47:53.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:41:08.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      This element was generated on 2020-03-21 00:41:08.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      This element was generated on 2020-03-21 00:41:08.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      This element was generated on 2020-03-21 00:41:08.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:41:08.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:41:08.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:41:08.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      This element was generated on 2020-03-21 00:41:08.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      WARNING - @mbg.generated
+      This element is automatically generated by MyBatis Generator, do not modify.
+      This element was generated on Sat Mar 21 00:16:52 CST 2020.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+      This element is automatically generated by MyBatis Generator, do not modify.
+      This element was generated on Sat Mar 21 00:16:52 CST 2020.
+    -->
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+      This element is automatically generated by MyBatis Generator, do not modify.
+      This element was generated on Sat Mar 21 00:16:52 CST 2020.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbg.generated
+      This element is automatically generated by MyBatis Generator, do not modify.
+      This element was generated on Sat Mar 21 00:16:52 CST 2020.
+    -->
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      WARNING - @mbg.generated
+      This element is automatically generated by MyBatis Generator, do not modify.
+      This element was generated on Sat Mar 21 00:16:52 CST 2020.
+    -->
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      WARNING - @mbg.generated
+      This element is automatically generated by MyBatis Generator, do not modify.
+      This element was generated on Sat Mar 21 00:16:52 CST 2020.
+    -->
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      WARNING - @mbg.generated
+      This element is automatically generated by MyBatis Generator, do not modify.
+      This element was generated on Sat Mar 21 00:16:52 CST 2020.
+    -->
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <!--
+      WARNING - @mbg.generated
+      This element is automatically generated by MyBatis Generator, do not modify.
+      This element was generated on Sat Mar 21 00:16:52 CST 2020.
+    -->
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="smg_code" jdbcType="VARCHAR" property="smgCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="handle_user" jdbcType="VARCHAR" property="handleUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="audit_user" jdbcType="VARCHAR" property="auditUser" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="print_time" jdbcType="TIMESTAMP" property="printTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, phone, content, smg_code, status, remark, handle_user, create_time, create_user, 
+    audit_user, audit_time, update_time, print_time, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from msg_code_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    insert into msg_code_info (id, phone, content, 
+      smg_code, status, remark, 
+      handle_user, create_time, create_user, 
+      audit_user, audit_time, update_time, 
+      print_time, update_user)
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{smgCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{handleUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{auditUser,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{printTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    insert into msg_code_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="smgCode != null">
+        smg_code,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="handleUser != null">
+        handle_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="auditUser != null">
+        audit_user,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="printTime != null">
+        print_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    update msg_code_info
+    <set>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="smgCode != null">
+        smg_code = #{smgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="handleUser != null">
+        handle_user = #{handleUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditUser != null">
+        audit_user = #{auditUser,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printTime != null">
+        print_time = #{printTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.app.common.base.entity.MsgCodeInfo">
+    update msg_code_info
+    set phone = #{phone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      smg_code = #{smgCode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      handle_user = #{handleUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      audit_user = #{auditUser,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      print_time = #{printTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
