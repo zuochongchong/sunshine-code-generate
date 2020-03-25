@@ -82,7 +82,17 @@ public class BaseRecordGenerator extends AbstractJavaGenerator {
         String rootClass = getRootClass();
         for (IntrospectedColumn introspectedColumn : introspectedColumns) {
             if (RootClassInfo.getInstance(rootClass, warnings)
-                    .containsProperty(introspectedColumn)) {
+                    .containsProperty(introspectedColumn)
+                    || introspectedColumn.getJavaProperty().equals("createUser")
+                    || introspectedColumn.getJavaProperty().equals("createDept")
+                    || introspectedColumn.getJavaProperty().equals("createTime")
+                    || introspectedColumn.getJavaProperty().equals("isDelete")
+                    || introspectedColumn.getJavaProperty().equals("auditUser")
+                    || introspectedColumn.getJavaProperty().equals("auditTime")
+                    || introspectedColumn.getJavaProperty().equals("handleUser")
+                    || introspectedColumn.getJavaProperty().equals("printTime")
+                    || introspectedColumn.getJavaProperty().equals("updateUser")
+                    || introspectedColumn.getJavaProperty().equals("updateTime")) {
                 continue;
             }
 
